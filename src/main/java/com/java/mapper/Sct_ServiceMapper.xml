@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.java.mapper.Sct_ServiceMapper">
+	<!-- 查询服务信息外加模糊查询 -->
+	<select id="select" parameterType="Map" resultType="sct_Service">
+		SELECT * FROM sct_Service
+		<where>
+			<if test="svr_cust_name != null and svr_cust_name != ''">svr_cust_name like '%${svr_cust_name}%'</if>
+			<if test="svr_title != null and svr_title != ''">AND svr_title like  '%${svr_title}%'</if>
+			<if test="svr_type != null and svr_type != ''">AND svr_type = #{svr_type}</if>
+			<if test="svr_create_date != null and svr_create_date != '' and svr_create_date1 !=null and svr_create_date1 !=''">AND svr_create_date BETWEEN #{svr_create_date} AND #{svr_create_date1}</if>
+			<if test="svr_result != null and svr_result != ''">AND svr_result = #{svr_result}</if>
+		</where>
+		<if test="sqlpage != null and sqlpage != ''">${sqlpage}</if>
+	</select>
+	<!-- 查询服务信息数量 -->
+	<select id="getCount" parameterType="Map" resultType="java.lang.Long">
+		SELECT COUNT(1) FROM sct_Service
+		<where>
+			<if test="svr_cust_name != null and svr_cust_name != ''">svr_cust_name like '%${svr_cust_name}%'</if>
+			<if test="svr_title != null and svr_title != ''">AND svr_title like  '%${svr_title}%'</if>
+			<if test="svr_type != null and svr_type != ''">AND svr_type = #{svr_type}</if>
+			<if test="svr_create_date != null and svr_create_date != '' and svr_create_date1 !=null and svr_create_date1 !=''">AND svr_create_date BETWEEN #{svr_create_date} AND #{svr_create_date1}</if>
+			<if test="svr_result != null and svr_result != ''">AND svr_result = #{svr_result}</if>
+		</where>
+	</select>
+
+	
+</mapper>
