@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -56,11 +57,20 @@ public class LoginController{
 		return modelAndView;
 	}
 	
-	@RequestMapping("/delete")
-	public String delete(String usr_id,HttpServletRequest request){
+	@RequestMapping(value="/delete",produces="text/html;charset=utf-8")
+	@ResponseBody
+	public String delete(Long usr_id,HttpServletRequest request){
 		//进行删除
-		
-		return "redirect:/index";
+		String del = "";
+		try {
+			sys_UserServiceImpl.deleteUser(usr_id);
+			del = "删除成功";
+		} catch (Exception e) {
+			// TODO: handle exception
+			del = "删除失败";
+		}
+
+		return JSON.toJSONString(del);
 	}
 	
 	/**

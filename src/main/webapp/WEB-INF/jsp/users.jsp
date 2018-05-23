@@ -109,7 +109,22 @@
 							</a> <script type="text/javascript">
 								function del() {
 									if (!confirm("确认要删除？")) {
-										window.event.returnValue = false;
+										//window.event.returnValue = false;
+										
+										$.ajax({
+								             type: "POST",
+								             url: "Sys_user/delete",
+								             data: {usr_id:usr_id},
+								             dataType: "json",
+								             success: function(data){
+								                    alert(data);
+								             		if(data == "删除成功"){
+								             			
+								             		}else{
+								             			
+								             		}
+								             }
+								        });
 									}
 								}
 							</script> <a href="#" class="table-link danger" title="删除"  onclick="return del()"> <span
