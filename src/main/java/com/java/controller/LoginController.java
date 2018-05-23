@@ -78,10 +78,10 @@ public class LoginController{
 	 * @return String 
 	 * @throws TODO
 	 */
-	@RequestMapping("/userassign")
-	public String userassign(){
+	@RequestMapping(value="/userassign")
+	public String userassign(HttpServletRequest request){
 		
-		
+		System.out.println("修改");
 		return "userassign";
 	}
 	

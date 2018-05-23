@@ -68,4 +68,19 @@ public class ControllerUI {
 	public String toUserinsert() {
 		return "userinsert";
 	}
+	
+	/**
+	 * 在跳转修改前将个人信息转发到页面
+	 * @Description TODO 
+	 * @author 刘凯
+	 * @date 2018年5月18日 : 上午11:17:49
+	 * @return String 
+	 * @throws TODO
+	 */
+	@RequestMapping(value="/userassign", method = RequestMethod.GET)
+	public String userassign(){
+		
+		System.out.println("修改");
+		return "userassign";
+	}
 }

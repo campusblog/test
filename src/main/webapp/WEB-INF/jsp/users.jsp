@@ -99,15 +99,25 @@
 						<!-- 如果为自己,则不显示下面的操作按钮 
                     	显示&nbsp;
                     -->
+                    		<script type="text/javascript">
+								function userassign() {
+										$.ajax({
+								             type: "POST",
+								             url: "Sys_user/userassign",
+								             dataType: "json",
+								        });
+								}
+							</script>
 						<c:if test="${c.usr_name!=sessionScope.username}">
 							<td style="width: 15%;" align="center"><a
-								href="Sys_user/userassign" class="table-link" title="分配角色">
+								href="userassign" class="table-link" title="分配角色">
 									<span class="fa-stack"> <i
 										class="fa fa-square fa-stack-2x"></i> <i
 										class="fa fa-pencil fa-stack-1x fa-inverse"></i>
 								</span>
-							</a> <script type="text/javascript">
-								function del() {
+							</a> 
+							<script type="text/javascript">
+								function del(usr_id) {
 									if (!confirm("确认要删除？")) {
 										//window.event.returnValue = false;
 										
@@ -127,7 +137,10 @@
 								        });
 									}
 								}
-							</script> <a href="#" class="table-link danger" title="删除"  onclick="return del()"> <span
+								
+								
+							</script> 
+							<a href="#" class="table-link danger" title="删除"  onclick="return del(${c.usr_id})"> <span
 									class="fa-stack"> <i class="fa fa-square fa-stack-2x"></i>
 										<i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
 								</span>
