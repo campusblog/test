@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.json.Json;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.DELETE;
@@ -15,11 +14,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.alibaba.fastjson.JSON;
 import com.java.pojo.Sys_role;
 import com.java.pojo.Sys_user;
 import com.java.service.impl.Sys_userServiceImpl;
@@ -49,7 +46,7 @@ public class LoginController{
 			//如果没有问题直接跳转到用户信息主页面
 //			attr.addFlashAttribute("username", username);
 //			attr.addFlashAttribute("list", list);
-			request.getSession().setAttribute("username", username);
+		request.getSession().setAttribute("username", username);
 			request.getSession().setAttribute("list", list);
 			ModelAndView modelAndView=new ModelAndView("redirect:/toadmin");
 			return modelAndView;
@@ -59,20 +56,11 @@ public class LoginController{
 		return modelAndView;
 	}
 	
-	@RequestMapping(value="/delete",produces="text/html;charset=utf-8")
-	@ResponseBody
-	public String delete(Long usr_id,HttpServletRequest request){
+	@RequestMapping("/delete")
+	public String delete(String usr_id,HttpServletRequest request){
 		//进行删除
-		String del = "";
-		try {
-			sys_UserServiceImpl.deleteUser(usr_id);
-			del = "删除成功";
-		} catch (Exception e) {
-			// TODO: handle exception
-			del = "删除失败";
-		}
-
-		return JSON.toJSONString(del);
+		
+		return "redirect:/index";
 	}
 	
 	/**

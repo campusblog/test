@@ -103,7 +103,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                         </a> 
             		</c:if>
             		<c:if test="${c.chc_status ==1}">
-                        <a href="planexecute.html" class="table-link" title="执行计划"> 
+                        <a href="toPlanInfo?chc_id=${c.chc_id}" class="table-link" title="执行计划"> 
                             <span class="fa-stack"> 
                                 <i class="fa fa-square fa-stack-2x"></i> 
                                 <i class="fa fa-external-link fa-stack-1x fa-inverse"></i>
@@ -111,7 +111,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                         </a> 
             		</c:if>
                         <c:if test="${c.chc_status ==2}">
-                        <a href="planlookup" class="table-link" title="查看"> 
+                        <a href="toPlanInfo?chc_id=${c.chc_id}" class="table-link" title="查看"> 
                             <span class="fa-stack"> 
                                 <i class="fa fa-square fa-stack-2x"></i> 
                                 <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>

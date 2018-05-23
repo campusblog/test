@@ -1,5 +1,6 @@
 package com.java.service.impl;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -65,9 +66,21 @@ public class Sal_chanceServiceImpl implements Sal_chanceService {
 	}
 
 	@Override
-	public String selectPerson() {
+	public List<Sys_user> selectPerson() {
 		// TODO 自动生成的方法存根
 		return sal_chanceDao.selectPerson();
+	}
+
+	@Override
+	public Sal_chance selectCnanceInfo(Long chc_id) {
+		// TODO 自动生成的方法存根
+		return sal_chanceDao.selectCnanceInfo(chc_id);
+	}
+
+	@Override
+	public void updateChance(Long chc_due_id, Date chc_due_date) {
+		// TODO 自动生成的方法存根
+		sal_chanceDao.updateChance(chc_due_id, chc_due_date);
 	}
 
 }

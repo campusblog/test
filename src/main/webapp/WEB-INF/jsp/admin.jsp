@@ -110,8 +110,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										class="fa fa-chevron-circle-right drop-icon"></i>
 									</a>
 									<ul class="submenu">
-										<li><a href="#"> 客户信息管理 </a></li>
-										<li><a href="#"> 客户流失管理 </a></li>
+										<li><a href="toCustomer" target="rightContent"> 客户信息管理 </a></li>
+										<li><a href="#" target="rightContent"> 客户流失管理 </a></li>
 									</ul>
 								</li>
 								<li>

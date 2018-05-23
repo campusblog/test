@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <head>
 <!--<base href="<%=basePath%>">-->
 
-<title>CRM</title>
+<title>修改销售机会</title>
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
 <meta http-equiv="expires" content="0">
@@ -34,7 +34,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </div>
     <!-- 添加数据的表格 -->
     <div stlye="padding:20px;">
-      <form role="form" action="" method="post">
+      <form role="form">
 <table width="100%" border="0" align="center">
           <tr>
             <td width="50%" height="50" align="center">
@@ -48,7 +48,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <td width="50%" height="50" align="center">
                  <div class="col-lg-3">
                     <div class="input-group">
-                      <span class="input-group-addon" name="">机会来源</span>
+                      <span class="input-group-addon">机会来源</span>
                       <input type="text" class="form-control" style="width:430px;">
                     </div>
                 </div>
@@ -173,7 +173,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       <form>
     </div>
 </body>
-<script src="js/laydate.dev.js"></script>
+<script src="../../js/laydate.dev.js"></script>
 <script>
 	laydate({
 		elem: '#createTime'

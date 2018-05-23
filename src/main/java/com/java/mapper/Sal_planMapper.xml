@@ -3,6 +3,16 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.java.mapper.Sal_planMapper">
-<!-- 查询用户数量 -->
-	
+<!-- 查询计划详情 -->
+	<select id="selectPlanInfo" resultType="sal_plan" parameterType="sal_plan">
+		SELECT * FROM sal_plan WHERE pla_chc_id=#{pla_chc_id}
+	</select>
+	<!-- 修改计划项 -->
+	<update id="updatePlanByplaId" parameterType="sal_plan">
+		UPDATE sal_plan SET pla_todo=#{pla_todo} WHERE pla_id=#{pla_id}
+	</update>
+	<!-- 添加机会 -->
+	<insert id="addPlanById" parameterType="sal_plan">
+	INSERT INTO sal_plan VALUES (NULL,#{pla_chc_id},#{pla_date},#{pla_todo},'结果还需进一步调查')
+	</insert>
 </mapper>

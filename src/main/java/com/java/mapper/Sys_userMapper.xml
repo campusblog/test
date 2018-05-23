@@ -41,10 +41,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	SELECT COUNT(1) FROM sys_user
 	</select>
 	<!-- 删除用户 -->
-	<delete id="deleteUser" parameterType="java.lang.Long">
+	<delete id="deleteUser" parameterType="int">
 		DELETE FROM sys_user WHERE usr_id=#{usr_id}
 	</delete>
-	
 	<!-- 修改用户 -->
 	<update id="updateUser" parameterType="sys_user">
 		UPDATE sys_user SET usr_name=#{usr_name} usr_role_id=#{usr_role_id} where usr_id=#{usr_id}

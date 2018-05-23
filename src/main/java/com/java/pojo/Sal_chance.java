@@ -35,9 +35,8 @@ public class Sal_chance {
 
 	private Long chc_due_id;  //机会处理编号
 	private  String chc_due_to;  //处理人
-	private String chc_due_date;  //处理时间
+	private Date chc_due_date;  //处理时间
 	private int chc_status;     //0:未开发 1：开发中 2：开发成功 3：开发失败
-
 
 	public Long getChc_id() {
 		return chc_id;
@@ -136,11 +135,11 @@ public class Sal_chance {
 		this.chc_due_to = chc_due_to;
 	}
 
-	public String getChc_due_date() {
+	public Date getChc_due_date() {
 		return chc_due_date;
 	}
 
-	public void setChc_due_date(String chc_due_date) {
+	public void setChc_due_date(Date chc_due_date) {
 		this.chc_due_date = chc_due_date;
 	}
 

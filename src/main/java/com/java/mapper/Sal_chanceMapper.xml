@@ -24,8 +24,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		</where>
 	</select>
 	<!-- 查询所有指派人 -->
-	<select id="selectPerson">
-		SELECT usr_name FROM sys_user
+	<select id="selectPerson" resultType="sys_user">
+		SELECT * FROM sys_user
 	</select>
 	<!-- 添加 -->
 	<insert id="addChance" parameterType="string">
@@ -34,6 +34,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<!-- 删除机会也就是更改状态 -->
 	<update id="deleteChance" parameterType="int">
 		UPDATE sal_chance SET chc_status=3
+	</update>
+	<!-- 查看具体销售机会详情 -->
+	<select id="selectCnanceInfo" parameterType="java.lang.Long" resultType="sal_chance">
+	SELECT * FROM sal_chance WHERE chc_id=#{chc_id}
+	</select>
+	<!-- 修改销售机会 -->
+	<update id="updateChance" parameterType="sal_chance">
+		UPDATE sal_chance SET chc_due_date=#{chc_due_date} ,chc_due_id=#{chc_due_id},chc_due_to=(SELECT usr_name FROM sys_user WHERE usr_id=chc_due_id)
 	</update>
 	
 </mapper>

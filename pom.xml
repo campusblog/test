@@ -1,10 +1,11 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.java</groupId>
-  <artifactId>crm</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>war</packaging>
-   <!-- 添加ssm框架所需要的jar包 -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.java</groupId>
+	<artifactId>crm</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<!-- 添加ssm框架所需要的jar包 -->
 	<properties>
 		<!-- spring版本号 -->
 		<spring.version>4.3.3.RELEASE</spring.version>
@@ -15,6 +16,8 @@
 		<log4j.version>1.2.17</log4j.version>
 	</properties>
 	<dependencies>
+
+
 		<!-- junit的jar包 -->
 		<dependency>
 			<groupId>junit</groupId>

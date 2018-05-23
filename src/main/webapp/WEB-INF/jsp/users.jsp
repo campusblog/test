@@ -107,27 +107,12 @@
 										class="fa fa-pencil fa-stack-1x fa-inverse"></i>
 								</span>
 							</a> <script type="text/javascript">
-								function del(usr_id) {
-									if (confirm("确认要删除？")) {
-										//window.event.returnValue = false;
-										
-										$.ajax({
-								             type: "POST",
-								             url: "Sys_user/delete",
-								             data: {usr_id:usr_id},
-								             dataType: "json",
-								             success: function(data){
-								                    alert(data);
-								             		if(data == "删除成功"){
-								             			
-								             		}else{
-								             			
-								             		}
-								             }
-								        });
+								function del() {
+									if (!confirm("确认要删除？")) {
+										window.event.returnValue = false;
 									}
 								}
-							</script> <a href="#" class="table-link danger" title="删除"  onclick="return del(${c.usr_id})"> <span
+							</script> <a href="#" class="table-link danger" title="删除"  onclick="return del()"> <span
 									class="fa-stack"> <i class="fa fa-square fa-stack-2x"></i>
 										<i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
 								</span>

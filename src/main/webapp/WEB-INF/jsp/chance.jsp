@@ -101,18 +101,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             		<td>${c.chc_tel }</td>
             		<td>${c.chc_create_date}</td>
             		<td style="width: 15%;">
-                        <a href="#"	class="table-link"> 
+            		<!-- 显示具体 -->
+                        <a href="toChanceassign?chc_id=${c.chc_id}"	class="table-link"> 
                             <span class="fa-stack"> 
                                 <i class="fa fa-square fa-stack-2x"></i> 
                                 <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
                             </span>
                         </a> 
-                        <a href="#" class="table-link"> 
+                        <!-- 修改 -->
+                        <a href="toUpdateChance?chc_id=${c.chc_id}" class="table-link"> 
                             <span class="fa-stack"> 
                                 <i class="fa fa-square fa-stack-2x"></i> 
                                 <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                             </span>
                         </a> 
+                        <!-- 删除 -->
                         <script type="text/javascript">
 								function del() {
 									if (!confirm("确认要删除？")) {
